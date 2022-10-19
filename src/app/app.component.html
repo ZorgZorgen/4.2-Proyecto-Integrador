@@ -1,0 +1,24 @@
+<h1>
+  {{ title }}
+</h1>
+
+<nav>
+  <a routerLink="/home" routerLinkActive="active">Inicio</a>
+  <a routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Productos</a>
+  <a routerLink="/products/cart" routerLinkActive="active">Carrito ({{nbCart}})</a> 
+  <a routerLink="/contact" routerLinkActive="active">Contacto</a>
+  <a routerLink="/admin" routerLinkActive="active">Admin</a>
+</nav>
+
+<router-outlet></router-outlet>
+
+<app-notification></app-notification>
+
+<footer>
+  <hr>
+  <a href="http://www.walterriedel.com" target="_blank">www.walterriedel.com</a> 2022 - proyecto con Angular :-)
+  <div class="right">
+    <a (click)="login()" *ngIf="!isLoggedIn">login</a>
+    <a (click)="logout()" *ngIf="isLoggedIn">logout</a>
+  </div>
+</footer>

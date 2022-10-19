@@ -1,0 +1,12 @@
+<ng-container *ngIf="notification">
+    <p *ngIf="notification?.isError && showNotification" style="border: 3px solid red; color: black; max-width: 700px; padding:10px; background-color: #df9292;clear:both">
+        <b>Error:</b> {{ notification.message }} <br />
+        <b>Pagina:</b> {{ notification.location }}
+        <button (click)="clear()" style="float:right;">Listo</button>
+    </p>
+
+    <p *ngIf="!notification?.isError && showNotification" style="border: 3px solid rgba(55, 55, 255, 0.815); color: black; max-width: 700px; padding:10px; background-color: #c7d2ff;clear:both">
+        <b>Mensaje:</b> {{ notification.message }}
+        <button (click)="clear()" style="float:right;">Listo</button>
+    </p>
+</ng-container>
